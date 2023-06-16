@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/**                                                                                                                                                                                                                               
- *main - Entry point                                                                                                                                                                                                              
- *discription: check a number if it is positive or negative                                                                                                                                                                       
- *Return:always 0                                                                                                                                                                                                                 
+/**
+ *main - Entry point
+ *discription: check a number if it is positive or negativ
+ *Return:always 0
  */
 int main(void)
 {
@@ -23,4 +23,5 @@ else
 {
 printf("%d is negative\n", n);
 }
+return (0);
 }
