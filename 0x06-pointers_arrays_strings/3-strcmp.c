@@ -1,5 +1,5 @@
 #include "main.h"
-#ifndef FILE_MAIN
+
 /**
  * _strcmp - compare 2 strings.
  * @s1: string to be compared.
