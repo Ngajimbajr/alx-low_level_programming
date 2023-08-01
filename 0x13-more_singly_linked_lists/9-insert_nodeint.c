@@ -2,47 +2,47 @@
 #include <stdlib.h>
 
 /**
- * insert_nodeint_at_index - function that inserts a new node at,
- * a given position.
- * @head: pointer to pointer to the head of linked list.
- * @idx: index of the list where the new node should be added.
- * @n: value of the new node.
+ * insert_nodeint_at_index - function with 3 arguments
+ * @head: pointer to head pointer of first node in linked list
+ * @idx: index of list
+ * @n: value integer
  *
- * Return:  the address of the new node, or NULL if it failed.
+ * Description: inserts a new node at a given position
+ * Return: address of the new node
  */
-
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new_node, *traverse;
-	unsigned int i = 0;
+	listint_t *temp, *cursor;
+	unsigned int count = 0;
 
 	if (head == NULL)
-		return (Null);
-	new_node = malloc(sizeof(listint_t));
-	if (new_node == NULL)
 		return (NULL);
 
-	new_node->n = n;
+	temp = malloc(sizeof(listint_t));
+	if (temp == NULL)
+		return (NULL);
+	temp->n = n;
+	cursor = *head;
+
 	if (idx == 0)
 	{
-
-		new_node->next = *head;
-		*head = new_node;
-		return (new_node);
+		temp->next = *head;
+		*head = temp;
+		return (*head);
 	}
 
-	traverse = *head;
-	while (i != idx - 1 && traverse != NULL)
+	while (cursor != NULL)
 	{
-		traverse = traverse->next;
-		i++;
+		if (count == idx - 1)
+		{
+			temp->next = cursor->next;
+			cursor->next = temp;
+		}
+		count++;
+		cursor = cursor->next;
 	}
+	if (idx > count)
+		return (NULL);
+	return (temp);
 
-	if (i == idx - 1 && traverse != NULL)
-	{
-		new_node->next = traverse->next;
-		traverse->next = new_node;
-		return (new_node);
-	}
-	return (NULL);
 }
