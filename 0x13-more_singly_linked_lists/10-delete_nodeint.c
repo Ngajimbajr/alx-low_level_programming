@@ -27,7 +27,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 
 	temp_variable = *head;
-	
 	while (i != index - 1 && temp_variable->next != NULL)
 	{
 		temp_variable = temp_variable->next;
