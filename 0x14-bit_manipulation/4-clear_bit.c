@@ -18,6 +18,6 @@ if (index > 63)
 return (-1);
 
 add = 1 << index;
-*n = *n & add;
+*n = *n & (~add);
 return (1);
 }
