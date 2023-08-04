@@ -23,6 +23,6 @@ void print_binary(unsigned long int n)
 		putchar ('1');
 		return;
 	}
-	print_binary (n >> 1);
+	print_binary(n >> 1);
 	putchar ('0' + (n & 1));
 }
